@@ -1,0 +1,8 @@
+{
+  "name": "Remix: MS FOOD",
+  "description": "An elite high-performance athletic optimization portal and biometric telemetry tracking system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
