@@ -4,8 +4,11 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+  const productionBase = process.env.BASE_URL ?? (repositoryName ? `/${repositoryName}/` : './');
+
   return {
-    base: process.env.NODE_ENV === 'production' ? './' : '/',
+    base: process.env.NODE_ENV === 'production' ? productionBase : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

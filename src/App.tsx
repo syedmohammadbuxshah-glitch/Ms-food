@@ -14,6 +14,7 @@ import { Flame, Beef, Droplet, Star } from 'lucide-react';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const homeHref = import.meta.env.BASE_URL;
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const imgLayerRef = useRef<HTMLDivElement>(null);
 
@@ -84,7 +85,7 @@ export default function App() {
       {/* LOGO */}
       <div className="logo-wrapper">
         <div className="inner">
-          <a href="/" aria-label="Home" style={{ textDecoration: 'none', fontWeight: 800 }}>
+          <a href={homeHref} aria-label="Home" style={{ textDecoration: 'none', fontWeight: 800 }}>
             <span style={{ color: '#FFCC00' }}>MS</span> <span style={{ color: '#E60000' }}>FOOD</span>
           </a>
         </div>
