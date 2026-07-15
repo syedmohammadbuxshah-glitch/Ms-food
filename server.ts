@@ -8,13 +8,14 @@ import { GoogleGenAI, Type } from "@google/genai";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
-// Rewrite /msfood paths to / for seamless local preview support
+// Rewrite the GitHub Pages project path to / for local and server previews.
 app.use((req, res, next) => {
-  if (req.url.startsWith("/msfood")) {
+  const projectPath = "/Ms-food";
+  if (req.url.toLowerCase().startsWith(projectPath.toLowerCase())) {
     const originalUrl = req.url;
-    req.url = req.url.substring(7) || "/";
+    req.url = req.url.slice(projectPath.length) || "/";
     console.log(`[Path Rewrite] Rewrote ${originalUrl} -> ${req.url}`);
   }
   next();
