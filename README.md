@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# MS Food
 
-# Run and deploy your AI Studio app
+MS Food is a React/Vite burger landing page designed for GitHub Pages deployment.
 
-This contains everything you need to run your app locally.
+## Live site
 
-View your app in AI Studio: https://ai.studio/apps/cd9a77dc-c761-4e46-8909-15a4955197be
+After the GitHub Pages workflow runs successfully, open the site at:
 
-## Run Locally
+https://syedmohammadbuxshah-glitch.github.io/Ms-food/
 
-**Prerequisites:**  Node.js
+## Run locally
 
+**Prerequisites:** Node.js 20+
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+2. Optional: copy `.env.example` to `.env.local` and set any required environment variables.
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Deploy to GitHub Pages
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. Push to `main` or run the workflow manually from the Actions tab to publish the latest build to GitHub Pages.
