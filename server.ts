@@ -10,6 +10,16 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+// Rewrite /msfood paths to / for seamless local preview support
+app.use((req, res, next) => {
+  if (req.url.startsWith("/msfood")) {
+    const originalUrl = req.url;
+    req.url = req.url.substring(7) || "/";
+    console.log(`[Path Rewrite] Rewrote ${originalUrl} -> ${req.url}`);
+  }
+  next();
+});
+
 // Enable JSON body parser
 app.use(express.json());
 
